@@ -200,7 +200,7 @@ layout: null
   <priority>0.6</priority>
 </url>
 <!-- linux end -->
-<!-- netcore begin: 46 links with priority=0.6, changefreq=monthly -->
+<!-- netcore begin: 50 links with priority=0.6, changefreq=monthly -->
 <url>
   <loc>https://colin-chang.site/netcore/pages/install-install.html</loc>
   <changefreq>monthly</changefreq>
@@ -377,6 +377,21 @@ layout: null
   <priority>0.6</priority>
 </url>
 <url>
+  <loc>https://colin-chang.site/netcore/pages/microservice-polly.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/microservice-ocelot.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/microservice-docker.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
   <loc>https://colin-chang.site/netcore/pages/multithreading-intro.html</loc>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
@@ -403,6 +418,11 @@ layout: null
 </url>
 <url>
   <loc>https://colin-chang.site/netcore/pages/multithreading-async.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/unittest.html</loc>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
