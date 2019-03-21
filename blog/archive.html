@@ -1,0 +1,67 @@
+---
+layout: default
+breadcrumb: true
+title: "Blog Archive"
+header:
+   title: "No pains, no gains"
+   image_fullwidth: blog-archive-title.jpg
+permalink: "blog/archive/"
+---
+<div id="blog-index" class="row">
+	<div class="small-12 columns t30">
+		<p class="teaser">Check out all blog posts in my blog archive</p>
+		
+		<h1>Categroies</h1>
+		<dl class="accordion" data-accordion>
+			{% assign cntCat = 1 %}
+			{% for category in site.categories %}
+			<dd class="accordion-navigation">
+				<a href="#panelCat{{ cntCat }}">
+					<span class="iconfont"></span> 
+					<strong>{{ category[0] }}</strong>
+				</a>
+				<div id="panelCat{{ cntCat }}" class="content">
+					<ul>
+						{% for post in category[1] %}
+						<li>
+							<a href="{{ post.url }}">
+								<strong>{{ post.title }}</strong> ››
+							</a>
+							{% if post.subheadline %}{{ post.subheadline }}  {% endif %}
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</dd>
+			{% assign cntCat=cntCat | plus:1 %}
+			{% endfor %}
+		</dl>
+	</div>
+	<div class="small-12 columns t30">
+		<h1>Tags</h1>
+		<dl class="accordion" data-accordion>
+			{% assign cntTag = 1 %}
+			{% for tag in site.tags %}
+			<dd class="accordion-navigation">
+				<a href="#panelTag{{ cntTag }}">
+					<span class="iconfont"></span> 
+					<strong>{{ tag[0] }}</strong>
+				</a>
+				<div id="panelTag{{ cntTag }}" class="content">
+					<ul>
+						{% for post in tag[1] %}
+						<li>
+							<a href="{{ post.url }}">
+								<strong>{{ post.title }}</strong> ››
+							</a>
+							{% if post.subheadline %}{{ post.subheadline }}  {% endif %}
+						</li>
+						{% endfor %}
+					</ul>
+				</div>
+			</dd>
+			{% assign cntTag=cntTag | plus:1 %}
+			{% endfor %}
+		</dl>
+	</div>
+</div>

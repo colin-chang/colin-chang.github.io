@@ -1,0 +1,27 @@
+- name: GitHub
+  url: http://github.com/colin-chang
+  class: icon-github
+
+- name: Google+
+  url: mailto:zhangcheng5468@gmail.com
+  class: icon-mail
+
+- name: Telegram
+  url: https://t.me/Colin_Chang
+  class: icon-paper-plane
+
+- name: Twitter
+  url: https://twitter.com/zhangcheng5468
+  class: icon-twitter
+
+- name: Facebook
+  url: https://www.facebook.com/colinchang.zc
+  class: icon-facebook
+
+- name: Instagram
+  url: https://www.instagram.com/colin__chang/
+  class: icon-instagram
+
+- name: YouTube
+  url: https://www.youtube.com/channel/UCMhN4CHJMuSOYe9CMXIoV7Q
+  class: icon-youtube

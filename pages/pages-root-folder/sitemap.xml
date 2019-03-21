@@ -1,0 +1,437 @@
+---
+permalink: /sitemap.xml
+title: 'Site map for robots'
+layout: null
+---
+<?xml version="1.0" encoding="UTF-8"?>
+{% comment %}
+	See http://www.sitemaps.org/protocol.html for argument meanings and values.
+	Gem jekyll-sitemap only lists urls with no control over priority and changefreq, hence using a custom one.
+	
+	Add your custom collections like this:
+		{% include sitemap_collection.xml links=site.projects name="Projects" priority=0.7 changefreq='monthly' %}
+{% endcomment %}
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{% include sitemap_collection.xml links=site.pages name="Pages" priority=0.3 changefreq='monthly' %}
+{% include sitemap_collection.xml links=site.posts name="Posts" priority=0.5 changefreq='monthly' %}
+<!-- python begin: 9 links with priority=0.6, changefreq=monthly -->
+<url>
+  <loc>http://colin-chang.site/python/part1/intro.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/python/part1/ide.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/python/part1/standard.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/python/part1/variabletype.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/python/part1/inout.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/python/part1/operator.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/python/part1/processctrl.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/python/part1/function.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/python/part1/module.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<!-- python end -->
+<!-- distribution begin: 5 links with priority=0.6, changefreq=monthly -->
+<url>
+  <loc>http://colin-chang.site/distribution/pages/mq.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/distribution/pages/separatefontend.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/distribution/pages/exceptionless.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/distribution/pages/db-lock.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/distribution/pages/elasticsearch.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<!-- distribution end -->
+<!-- linux begin: 22 links with priority=0.6, changefreq=monthly -->
+<url>
+  <loc>https://colin-chang.site/linux/part1/directive.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part1/filemg/directory.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part1/filemg/view.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part1/filemg/mkrm.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part1/filemg/cpmv.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part1/filemg/find.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part1/filemg/link.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part1/filemg/compress.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part1/filemg/vim.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part1/permission/usermg.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part1/permission/permission.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part1/maintenance.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part1/remote.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part2/ftp.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part2/mysql.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part2/nginx.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part2/gui.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part4/crossgfw.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part4/wg.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part4/v2ray.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part4/brook.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/linux/part4/tg.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<!-- linux end -->
+<!-- netcore begin: 46 links with priority=0.6, changefreq=monthly -->
+<url>
+  <loc>https://colin-chang.site/netcore/pages/install-install.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/install-deploy.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/config.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/di-intro.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/di-ioc.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/di-designmode.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/di-di.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/di-register.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/di-consume.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/di-lifetime.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/di-aspnetcore.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/di-src.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/pipeline-diagram.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/pipeline-middlewire.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/pipeline-lifetime.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/pipeline-environment.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/supplement.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/auth-authentication.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/auth-cookie.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/auth-jwt.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/auth-auth2.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/authorization.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/webapi-restful.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/webapi-basic.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/webapi-multiversion.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/webapi-security.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/webapi-openapi.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/log.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/dapper.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/docker-intro.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/docker-install.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/docker-cmd.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/docker-dockerfile.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/microservice-intro.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/microservice-consul.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/multithreading-intro.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/multithreading-basic.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/multithreading-synchronization.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/multithreading-threadpool.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/multithreading-uiresource.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/multithreading-async.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/autofac.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/https.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/quartz.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/mailsms.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>https://colin-chang.site/netcore/pages/staticssi.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<!-- netcore end -->
+<!-- frontend begin: 0 links with priority=0.6, changefreq=monthly -->
+<!-- frontend end -->
+</urlset>

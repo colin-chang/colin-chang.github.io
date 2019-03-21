@@ -1,0 +1,22 @@
+- title: Home
+  url: "/"
+  side: left
+
+- title: Blog
+  url: "/blog/"
+  side: left
+  dropdown:
+  - title: "Blog Archive"
+    url: "/blog/archive/"
+
+- title: Book
+  url: "/book/"
+  side: left
+  
+- title: "Search"
+  url: "/search/"
+  side: right
+
+- title: "About"
+  url: "/contact/"
+  side: right

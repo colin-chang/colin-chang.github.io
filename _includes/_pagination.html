@@ -1,0 +1,181 @@
+{% comment %}
+* This loops through the paginated posts
+*
+* Total posts: {{ paginator.total_posts }}
+* Total paginate-pages: {{ paginator.total_pages }}
+*
+{% endcomment %}
+
+
+{% for post in paginator.posts %}
+<div class="row">
+  <div class="small-12 columns b60">
+    <p class="subheadline">{{ post.categories | join: ' &middot; ' | prepend: '<span class="subheader">' | append: '</span>'
+      }}{% if post.categories != empty and post.subheadline != NULL %} – {% endif %}{{ post.subheadline }}</p>
+    <h2><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h2>
+    <p>
+      {% if post.image.thumb %}<a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="{{ post.title | escape_once }}"><img
+          src="{{ site.urlimg }}{{ post.image.thumb }}" class="alignleft" width="150" height="150" alt="{{ page.title escape_once }}"></a>{%
+      endif %}
+
+      {% if post.meta_description %}{{ post.meta_description | strip_html | escape }}{% elsif post.teaser %}{{
+      post.teaser | strip_html | escape }}{% endif %}
+    </p>
+    <p>
+      <a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}" title="{{ site.data.language.read }} {{ post.title | escape_once }}"><strong>{{
+          site.data.language.read_more }}</strong></a>
+      <span style="float:right;margin-right:15px;">{{post.date | date: "%Y-%m-%d" }}</span>
+    </p>
+  </div><!-- /.small-12.columns -->
+</div><!-- /.row -->
+{% endfor %}
+
+<!-- 
+<nav id="pagination">
+  {% if paginator.previous_page %}
+  {% if paginator.previous_page == 1 %}
+  <a rel="prev" class="radius button small" href="{{ site.url }}{{ site.baseurl }}/blog/" title="{{ site.data.language.previous_posts }}">&laquo;
+    {{ site.data.language.previous_posts }}</a>
+  {% else %}
+  <a rel="prev" class="radius button small" href="{{ site.url }}{{ site.baseurl }}/blog/page{{ paginator.previous_page }}/"
+    title="{{ site.data.language.previous_posts }}">&laquo; {{ site.data.language.previous }}</a>
+  {% endif %}
+  {% endif %}
+
+  {% if paginator.next_page %}
+  <a rel="next" class="radius button small" href="{{ site.url }}{{ site.baseurl }}/blog/page{{ paginator.next_page }}/"
+    title="{{ site.data.language.next_posts }}">{{ site.data.language.next }} &raquo;</a>
+  {% endif %}
+
+  <a class="radius button small" href="{{ site.url }}{{ site.baseurl }}/blog/archive/" title="{{ site.data.language.blog_archive }}">{{
+    site.data.language.blog_archive }}</a>
+</nav> -->
+
+<style>
+  .pagination-lg>li:first-child>a,
+  .pagination-lg>li:first-child>span {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+  }
+
+  .pagination>li:first-child>a,
+  .pagination>li:first-child>span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+  }
+
+  .pagination-lg>li:last-child>a,
+  .pagination-lg>li:last-child>span {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+  }
+
+  .pagination>li:last-child>a,
+  .pagination>li:last-child>span {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+
+  .pagination>.disabled>a,
+  .pagination>.disabled>a:focus,
+  .pagination>.disabled>a:hover,
+  .pagination>.disabled>span,
+  .pagination>.disabled>span:focus,
+  .pagination>.disabled>span:hover {
+    color: #777;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd;
+  }
+
+  .pagination>.active>a,
+  .pagination>.active>a:focus,
+  .pagination>.active>a:hover,
+  .pagination>.active>span,
+  .pagination>.active>span:focus,
+  .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+  }
+
+  .pagination-lg>li>a,
+  .pagination-lg>li>span {
+    padding: 10px 16px;
+    font-size: 18px;
+    line-height: 1.3333333;
+  }
+
+  .pagination>li>a,
+  .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+
+  .pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+
+  .pagination>li {
+    display: inline;
+    text-align: -webkit-match-parent;
+  }
+</style>
+
+{% if paginator.total_pages > 1 %}
+<nav>
+  <ul class="pagination pagination-lg">
+    {% if paginator.previous_page %}
+    {% assign class = '' %}
+    {% assign href = paginator.previous_page_path | relative_url %}
+    {% else %}
+    {% assign class = 'disabled' %}
+    {% assign href = 'javascript:void(0)' %}
+    {% endif %}
+    <li class="{{class}}"><a href="{{href}}" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
+
+
+    {% for page in (1..paginator.total_pages) %}
+    {% if page == paginator.page %}
+    {% assign class = 'active' %}
+    {% assign href = javascript:void(0) %}
+    {% elsif page == 1 %}
+    {% assign class = '' %}
+    {% assign href = site.paginate_path | relative_url | remove: 'page:num' %}
+    {% else %}
+    {% assign class = '' %}
+    {% assign href = site.paginate_path | relative_url | replace: ':num', page %}
+    {% endif %}
+    <li class="{{class}}"><a href="{{href}}">{{page}}</a></li>
+    {% endfor %}
+
+    {% if paginator.next_page %}
+    {% assign class = '' %}
+    {% assign href = paginator.next_page_path | relative_url %}
+    {% else %}
+    {% assign class = 'disabled' %}
+    {% assign href = 'javascript:void(0)' %}
+    {% endif %}
+    <li class="{{class}}"><a href="{{href}}" aria-label="Next"><span aria-hidden="true">»</span></a></li>
+  </ul>
+</nav>
+{% endif %}
