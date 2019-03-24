@@ -61,7 +61,7 @@ layout: null
   <priority>0.6</priority>
 </url>
 <!-- python end -->
-<!-- distribution begin: 7 links with priority=0.6, changefreq=monthly -->
+<!-- distribution begin: 8 links with priority=0.6, changefreq=monthly -->
 <url>
   <loc>http://colin-chang.site/distribution/pages/mq.html</loc>
   <changefreq>monthly</changefreq>
@@ -74,6 +74,11 @@ layout: null
 </url>
 <url>
   <loc>http://colin-chang.site/distribution/pages/exceptionless.html</loc>
+  <changefreq>monthly</changefreq>
+  <priority>0.6</priority>
+</url>
+<url>
+  <loc>http://colin-chang.site/distribution/pages/redis.html</loc>
   <changefreq>monthly</changefreq>
   <priority>0.6</priority>
 </url>
