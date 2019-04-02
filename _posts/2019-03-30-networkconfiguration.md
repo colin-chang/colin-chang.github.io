@@ -53,7 +53,7 @@ DNS2=202.106.0.20       # 备用DNS2
 $ systemctl restart network
 ```
 
-### 2. 防火墙设置
+### 3. 防火墙设置
 ```sh
 # 启动防火墙
 $ sudo systemctl start firewalld.service
