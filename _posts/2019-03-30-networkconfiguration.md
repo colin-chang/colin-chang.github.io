@@ -53,6 +53,16 @@ DNS2=202.106.0.20       # 备用DNS2
 $ systemctl restart network
 ```
 
+设定IP地址后，启动docker网络服务时如果遇到以下提醒`WARNING: IPv4 forwarding is disabled. Networking will not work.`可以做以下修改。
+
+```sh
+$ vi /etc/sysctl.conf
+
+# 添加这段代码 net.ipv4.ip_forward=1 到文件中
+
+$ systemctl restart network
+```
+
 ### 3. 防火墙设置
 ```sh
 # 启动防火墙
