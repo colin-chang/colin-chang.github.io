@@ -26,10 +26,10 @@ books:
     thumb: "book-linux.jpg"
     intro: "Linux是一套免费使用和自由传播的类Unix操作系统，是一个基于POSIX和UNIX的多用户、多任务、支持多线程和多CPU的操作系统。Linux能运行主要的UNIX工具软件、应用程序和网络协议。它支持32位和64位硬件。Linux继承了Unix以网络为核心的设计思想，是一个性能稳定的多用户网络操作系统。"
     date: "2018-12-08"
-  - name: "分布式"
-    url: "distribution/"
+  - name: "系统架构设计"
+    url: "architecture/"
     categories: "Structure"
-    thumb: "book-distribution.jpg"
+    thumb: "book-architecture.jpg"
     intro: "关于大型系统的分布式架构在网上存在着大量的相关资料，在不同的技术栈中又存在这些许的差异，但究其根本整体的思路是大同小异的。我们就此以.net平台为例，对分布式架构的演化过程做一个简单的梳理。"
     date: "2018-12-08"
 ---
