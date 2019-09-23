@@ -26,6 +26,8 @@ author: Colin
 # This URL is the main address for absolute links. Don't include a slash at the end.
 #
 url: 'https://colinchang.net'
+protocol: 'https://'
+host: 'colinchang.net' 
 baseurl: ''
 
 # This is for the editing function in _/includes/improve_content
