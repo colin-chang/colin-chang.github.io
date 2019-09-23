@@ -32,7 +32,7 @@ $ systemctl restart network
 ```
 重启后稍等片刻等待自动获取IP后网络即可使用。可以使用`ping`命令测试网络
 ```sh
-$ ping colin-chang.site
+$ ping colinchang.net
 ```
 
 ### 2. 设置固定IP

@@ -1,7 +1,7 @@
 ## Welcome to Colin Chang's Personal Blog
 
 
-This [site](https://colin-chang.site) is base on [Jekyll](https://jekyllrb.com/) and use [Feeling Responsive Theme](https://github.com/colin-chang/feeling-responsive).
+This [site](https://colinchang.net) is base on [Jekyll](https://jekyllrb.com/) and use [Feeling Responsive Theme](https://github.com/colin-chang/feeling-responsive).
 
 
 > How to run
