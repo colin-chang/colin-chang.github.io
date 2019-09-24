@@ -28,7 +28,7 @@ author: Colin
 url: 'https://colinchang.net'
 baseurl: ''
 protocol: 'https://'
-# host: 'colinchang.net' 
+domain: 'colinchang.net'
 
 # This is for the editing function in _/includes/improve_content
 # Leave it empty if your site is not on GitHub/GitHub Pages

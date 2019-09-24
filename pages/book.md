@@ -43,13 +43,13 @@ books:
                {{ book.categories | join: ' &middot; ' | prepend: '<span class="subheader">' | append: '</span>' }}
             </p>
             <h2 style="margin-top:0">
-               <a href="{{ site.protocol }}{{ book.url }}.{{ site.host }}" target="_blank">
+               <a href="{{ site.protocol }}{{ book.url }}.{{ site.domain }}" target="_blank">
                   {{ book.name }}
                </a>
             </h2>
             <p>
                {% if book.thumb %}
-               <a href="{{ site.protocol }}{{ book.url }}.{{ site.host }}" title="{{ book.name | escape_once }}"  target="_blank">
+               <a href="{{ site.protocol }}{{ book.url }}.{{ site.domain }}" title="{{ book.name | escape_once }}"  target="_blank">
                   <img src="{{ site.urlimg }}{{ book.thumb }}" class="alignleft"/>
                </a>
                {% endif %}
@@ -58,7 +58,7 @@ books:
                {% endif %}
             </p>
             <p>
-               <a href="{{ site.protocol }}{{ book.url }}.{{ site.host }}" title="{{ site.data.language.read }} {{ book.name | escape_once }}"  target="_blank">
+               <a href="{{ site.protocol }}{{ book.url }}.{{ site.domain }}" title="{{ site.data.language.read }} {{ book.name | escape_once }}"  target="_blank">
                   <strong>{{ site.data.language.read_more }}</strong>
                </a>
                <span style="float:right;margin-right:15px;">{{book.date}}</span>
