@@ -8,20 +8,20 @@ layout: frontpage
 header:
   image_fullwidth: home-title.jpg
 widget1:
-  title: "Blog & Portfolio"
+  title: "Blogs"
   url: '/blog/'
   image: home-blog.jpg
-  text: 'Every good portfolio website has a blog with fresh news, thoughts and develop&shy;ments of your activities. We also give readers a quick overview of all the posts.'
+  text: 'Blogs about daily life such as some random thoughts and activities.We also share some good ideas and solutions here.'
 widget2:
-  title: "Book & Notebook"
+  title: "Books"
   url: '/book/'
   image: home-book.jpg
-  text: 'Here are some personal books and notes writed when I learn something new.Such as IT and other skills.All of these books are base on <a href="https://www.gitbook.com/@colinchang/spaces">Gitbook</a>.'
+  text: 'Here are some personal books wrote when I learn something new.most of them are about IT and other useful skills.'
 
 widget3:
-  title: "Theme Document"
+  title: "Theme"
   url: 'https://github.com/Phlow/feeling-responsive/'
-  text: '1. Language-Support :)<br/>2. Optimized for speed and it&#39;s responsive.<br/>3. Built on <a href="http://foundation.zurb.com/">Foundation Framework</a>.<br/>4. Customizable navigation, footer,...'
+  text: '1. Optimized for speed and it&#39;s responsive.<br/>2. Built on <a href="http://foundation.zurb.com/">Foundation Framework</a>.<br/>3. Customizable navigation, footer,...'
   video: '<a href="#" data-reveal-id="videoModal"><img src="/images/home-doc.jpg" width="302" height="182" alt=""/></a>'
 
 #
