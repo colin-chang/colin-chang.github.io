@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 
 set -e
-jekyll build
+bundle exec jekyll build
 cd _site
 echo 'colinchang.net' > CNAME
 git init
