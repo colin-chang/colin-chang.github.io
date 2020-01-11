@@ -43,7 +43,7 @@ improve_content: https://github.com/colin-chang/colin-chang.github.io/edit/gh-pa
 urlimg: '/images/'
 urlres: '/res/'
 urlbgm: '/res/bgm/'
-
+download: '/res/download/'
 
 # Logo size is 600x80 pixels
 logo: "logo.png"
