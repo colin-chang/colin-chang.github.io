@@ -1,0 +1,1221 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Html Table 冻结表头</title>
+
+    <link rel="stylesheet" type="text/css" href="https://colinchang.net/assets/css/styles_feeling_responsive.css">
+
+  
+
+	<script src="https://colinchang.net/assets/js/modernizr.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js"></script>
+	<script>
+		WebFont.load({
+			google: {
+				families: [ 'Lato:400,700,400italic:latin', 'Volkhov::latin' ]
+			}
+		});
+	</script>
+
+	<noscript>
+		<link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic%7CVolkhov' rel='stylesheet' type='text/css'>
+	</noscript>
+
+
+	<!-- Search Engine Optimization -->
+	<meta name="description" content="当表格行列数较多时，为了用户在屏幕内容滚动时更加方便的查看数据，我们期望可以像Excel一样冻结表格的固定行和列（一般为表头和列头），遗憾的是HTML中并没有这种效果，那让我们来动手开发吧，Let&#39;s do it！">
+	<meta name="google-site-verification" content="XqD1zh7BSlZB2WpuQ6CAfzX7rig942SBAg_xjEm6hQ0">
+	<meta name="msvalidate.01" content="FAFE131EE02C3BD715F5F40896C3264F" >
+	<meta name="baidu-site-verification" content="9XJ09v1l11" >
+	
+	<link rel="author" href="https://plus.google.com/u/0/101222328544616797809">
+	
+	
+	<link rel="canonical" href="https://colinchang.net/it/fixtable/">
+
+
+	<!-- Facebook Open Graph -->
+	<meta property="og:title" content="Html Table 冻结表头">
+	<meta property="og:description" content="当表格行列数较多时，为了用户在屏幕内容滚动时更加方便的查看数据，我们期望可以像Excel一样冻结表格的固定行和列（一般为表头和列头），遗憾的是HTML中并没有这种效果，那让我们来动手开发吧，Let&#39;s do it！">
+	<meta property="og:url" content="https://colinchang.net/it/fixtable/">
+	<meta property="og:locale" content="en_EN">
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Colin's Blog">
+	
+	<meta property="article:author" content="https://www.facebook.com/colinchang.zc@gmail.com">
+
+
+	
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:site" content="zhangcheng5468">
+	<meta name="twitter:creator" content="zhangcheng5468">
+	<meta name="twitter:title" content="Html Table 冻结表头">
+	<meta name="twitter:description" content="当表格行列数较多时，为了用户在屏幕内容滚动时更加方便的查看数据，我们期望可以像Excel一样冻结表格的固定行和列（一般为表头和列头），遗憾的是HTML中并没有这种效果，那让我们来动手开发吧，Let&#39;s do it！">
+	
+	
+
+	<link type="text/plain" rel="author" href="https://colinchang.net/humans.txt">
+
+	
+
+	
+
+	<link rel="icon" sizes="32x32" href="https://colinchang.net/assets/img/favicon-32x32.png">
+
+	<link rel="icon" sizes="192x192" href="https://colinchang.net/assets/img/touch-icon-192x192.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="180x180" href="https://colinchang.net/assets/img/apple-touch-icon-180x180-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="https://colinchang.net/assets/img/apple-touch-icon-152x152-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://colinchang.net/assets/img/apple-touch-icon-144x144-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="https://colinchang.net/assets/img/apple-touch-icon-120x120-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://colinchang.net/assets/img/apple-touch-icon-114x114-precomposed.png">
+
+	
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="https://colinchang.net/assets/img/apple-touch-icon-76x76-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://colinchang.net/assets/img/apple-touch-icon-72x72-precomposed.png">
+
+	<link rel="apple-touch-icon-precomposed" href="https://colinchang.net/assets/img/apple-touch-icon-precomposed.png">	
+
+	<meta name="msapplication-TileImage" content="https://colinchang.net/assets/img/msapplication_tileimage.png">
+
+	<meta name="msapplication-TileColor" content="#fabb00">
+
+
+	
+
+</head>
+<body id="top-of-page" class="post">
+	
+	
+<div id="navigation" class="sticky">
+  <nav class="top-bar" role="navigation" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+      <h1 class="show-for-small-only"><a href="https://colinchang.net" class="icon-tree"> Colin's Blog</a></h1>
+    </li>
+       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Nav</span></a></li>
+    </ul>
+    <section class="top-bar-section">
+
+      <ul class="right">
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+            
+            
+              <li class="divider"></li>
+              <li><a  href="https://colinchang.net/search/">Search</a></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+            
+            
+              <li class="divider"></li>
+              <li><a  href="https://colinchang.net/contact/">About</a></li>
+
+            
+            
+          
+        
+        
+      </ul>
+
+      <ul class="left">
+        
+
+              
+
+          
+          
+
+            
+            
+              <li><a  href="https://colinchang.net/">Home</a></li>
+              <li class="divider"></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+
+              <li class="has-dropdown">
+                <a  href="https://colinchang.net/blog/">Blog</a>
+
+                  <ul class="dropdown">
+                    
+
+                      
+
+                      <li><a  href="https://colinchang.net/blog/archive/">Blog Archive</a></li>
+                    
+                  </ul>
+
+              </li>
+              <li class="divider"></li>
+            
+          
+        
+
+              
+
+          
+          
+
+            
+            
+              <li><a  href="https://colinchang.net/book/">Book</a></li>
+              <li class="divider"></li>
+
+            
+            
+          
+        
+
+              
+
+          
+          
+        
+
+              
+
+          
+          
+        
+        
+      </ul>
+    </section>
+  </nav>
+</div><!-- /#navigation -->
+
+	
+
+	
+
+<div id="masthead-with-text" style=" ">
+	<div class="row">
+		<div class="small-12 columns">
+			<div class="masthead-title">HTML 表格冻结</div>
+		</div><!-- /.small-12.columns -->
+	</div><!-- /.row -->
+</div><!-- /#masthead -->
+
+
+
+
+<nav class="breadcrumbs" role="menubar" aria-label="breadcrumbs">
+ <a href="https://colinchang.net">Start</a>
+ 
+   
+    
+        <a href="https://colinchang.net/it/">it</a>
+    
+  
+    
+        <a class="current">Html Table 冻结表头</a>
+    
+  
+</nav>
+
+
+
+
+
+
+
+
+
+
+	<div class="row t30">
+	<div class="medium-8 columns medium-offset-2 end">
+		<article itemscope itemtype="http://schema.org/Article">
+			<header>
+				
+
+				<div itemprop="name">
+					<p class="subheadline">类Excel表头，列头冻结效果</p>
+					<h1>Html Table 冻结表头</h1>
+				</div>
+			</header>
+
+
+			
+			<p class="teaser" itemprop="description">
+				当表格行列数较多时，为了用户在屏幕内容滚动时更加方便的查看数据，我们期望可以像Excel一样冻结表格的固定行和列（一般为表头和列头），遗憾的是HTML中并没有这种效果，那让我们来动手开发吧，Let's do it！
+			</p>
+			
+
+			<div itemprop="articleSection">
+			<p>实现表格行列冻结效果，网上较多采用以下两种方式。</p>
+
+<ul>
+  <li>
+    <p>通过多个表格拼接层叠，Js控制多个表格间的联动。这种方式逻辑简单，容易实现，但代码冗余，难以维护，灵活性不好，适合简单场景下使用。</p>
+  </li>
+  <li>
+    <p>是通过创建多个div，div之间通过css实现层叠，每个div放置当前表格的克隆。例如：需要行冻结时，创建存放冻结行表格的div，通过设置z-index属性和position属性，让冻结行表格在数据表格的上层。同理，需要列冻结时，创建存放冻结列表格的div，并放置在数据表格的上层。如果需要行列都冻结时，则除了创建冻结行、冻结列表格的div，还需要创建左上角的固定行列表格的div，并放置在所有div的最上层。 这种方式与第一种思路类似，只是实现冻结部分是动态创建，这种方式可维护性比第一种略好。</p>
+  </li>
+</ul>
+
+<h3 id="1-表格层叠方式">1. 表格层叠方式</h3>
+
+<h4 id="11-冻结某一行列">1.1 冻结某一行（列）</h4>
+
+<p>1）把看起来是一个整体的表格拆分成两部分，table1负责固定部分如thead，而table2负责可以拖动的部分如tbody。
+<img src="/images/fixtable-structure-1.jpg" alt="冻结行(列)表格层叠图" /></p>
+
+<p><em>伪代码：</em></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-out"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-top"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table&gt;</span>
+            <span class="nt">&lt;thead&gt;</span>
+                <span class="nt">&lt;tr&gt;&lt;th&gt;</span>姓名<span class="nt">&lt;/th&gt;&lt;th&gt;</span>学号<span class="nt">&lt;/th&gt;&lt;th&gt;</span>年龄<span class="nt">&lt;/th&gt;&lt;/tr&gt;</span>
+            <span class="nt">&lt;/thead&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-main"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table&gt;</span>
+            <span class="nt">&lt;tbody&gt;</span>
+                <span class="nt">&lt;tr&gt;&lt;td&gt;</span>张三<span class="nt">&lt;/td&gt;&lt;td&gt;</span>001<span class="nt">&lt;/td&gt;&lt;td&gt;</span>17<span class="nt">&lt;/td&gt;&lt;/tr&gt;</span> 
+                <span class="nt">&lt;tr&gt;&lt;td&gt;</span>李四<span class="nt">&lt;/td&gt;&lt;td&gt;</span>002<span class="nt">&lt;/td&gt;&lt;td&gt;</span>18<span class="nt">&lt;/td&gt;&lt;/tr&gt;</span> 
+            <span class="nt">&lt;/tbody&gt;</span>     
+        <span class="nt">&lt;/table&gt;</span>                
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>2）把两个table固定好了之后，监听table2的滚动，用table2的滚动带动table1的滚动（通过设置css里的left 或者 scroll，如果是绝对定位那么只能用设定css中left的方法）</p>
+
+<p><em>伪代码：</em></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">$</span><span class="p">(</span><span class="s1">'.table-main'</span><span class="p">).</span><span class="nx">scroll</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="nx">scrollLeft</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">scrollLeft</span><span class="p">();</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">'.table-top'</span><span class="p">).</span><span class="nx">scrollLeft</span><span class="p">(</span><span class="nx">scrollLeft</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<h4 id="12-同时冻结行和列">1.2. 同时冻结行和列</h4>
+
+<p>1） 把看起来是一个整体的表格拆分成四个部分
+<img src="/images/fixtable-structure-2.jpg" alt="同时冻结行列表格层叠图" /></p>
+
+<p><em>伪代码：</em></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-out"</span><span class="nt">&gt;</span>
+    <span class="c">&lt;!--固定行--&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-top"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table&gt;</span>
+            <span class="nt">&lt;thead&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;th&gt;</span>零件名称<span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;th&gt;</span>换件日期<span class="nt">&lt;/th&gt;</span>
+                    <span class="nt">&lt;th&gt;</span>寿命比例<span class="nt">&lt;/th&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+            <span class="nt">&lt;/thead&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="c">&lt;!--内容--&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-main"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table&gt;</span>
+            <span class="nt">&lt;tbody&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>电机<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>
+                        <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.6"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+                    <span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>蝶型弹簧<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+                    <span class="nt">&lt;td&gt;</span>
+                        <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.4"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+                    <span class="nt">&lt;/td&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+            <span class="nt">&lt;/tbody&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="c">&lt;!--固定列--&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-left"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table&gt;</span>
+            <span class="nt">&lt;tbody&gt;</span>
+                <span class="nt">&lt;tr&gt;&lt;td&gt;</span>电机<span class="nt">&lt;/td&gt;&lt;/tr&gt;</span>
+                <span class="nt">&lt;tr&gt;&lt;td&gt;</span>蝶型弹簧<span class="nt">&lt;/td&gt;&lt;/tr&gt;</span>
+            <span class="nt">&lt;/tbody&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="c">&lt;!--左上角交叉区--&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"table-left-top"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;table&gt;</span>
+            <span class="nt">&lt;thead&gt;</span>
+                <span class="nt">&lt;tr&gt;</span>
+                    <span class="nt">&lt;th&gt;</span>备件名称<span class="nt">&lt;/th&gt;</span>
+                <span class="nt">&lt;/tr&gt;</span>
+            <span class="nt">&lt;/thead&gt;</span>
+        <span class="nt">&lt;/table&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</code></pre></div></div>
+
+<p>2）把四个table固定好了之后，监听table-main的滚动，用table-main的滚动带动table-top的左右移动和table-left的上下移动。在这个示例里，我对table-left用到了绝对定位，所以给table-left设定scroll无效，但是可以使用改变table-left的css中top的属性值来使得table-left上下移动。</p>
+
+<p><em>伪代码：</em></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">tb</span><span class="o">=</span><span class="nx">$</span><span class="p">(</span><span class="s1">'.table-out'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">tbLeft</span><span class="o">=</span><span class="nx">tb</span><span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s1">'.table-left'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">tbTop</span><span class="o">=</span><span class="nx">tb</span><span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s1">'.table-top'</span><span class="p">);</span>
+<span class="kd">var</span> <span class="nx">tbMain</span><span class="o">=</span><span class="nx">tb</span><span class="p">.</span><span class="nx">children</span><span class="p">(</span><span class="s1">'.table-main'</span><span class="p">);</span>
+
+<span class="kd">var</span> <span class="nx">leftTop</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">tbLeft</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">'top'</span><span class="p">));</span>
+<span class="nx">tbMain</span><span class="p">.</span><span class="nx">scroll</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>		
+    <span class="nx">tbLeft</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="s1">'top'</span><span class="p">,</span><span class="nx">leftTop</span> <span class="o">-</span> <span class="nx">tbMain</span><span class="p">.</span><span class="nx">scrollTop</span><span class="p">()</span><span class="o">+</span><span class="s1">'px'</span><span class="p">);</span>
+    <span class="nx">tbTop</span><span class="p">.</span><span class="nx">scrollLeft</span><span class="p">(</span><span class="nx">tbMain</span><span class="p">.</span><span class="nx">scrollLeft</span><span class="p">());</span>
+<span class="p">});</span>
+</code></pre></div></div>
+
+<p><em>效果图：</em></p>
+<iframe src="/res/fixtable/fixtable.html" style="border:0;width:100%;height:355px;"></iframe>
+<p><small>默认的滚动条比较难看，我们可以使用了jQuery.nicescroll等插件来美化滚动条效果</small></p>
+
+<p><em>完整代码下载：</em> 
+<a target="_blank" href="https://gist.github.com/colin-chang/29a9d08e7ea850fda9ec012bc49cc530">表格行列冻结示例下载</a></p>
+
+<h3 id="2-supertable方式动态创建表格">2. SuperTable方式（动态创建表格）</h3>
+<p>上面手动拼接表格的方式会在Html中存在较多冗余代码，表格结构维护起来比较繁琐，我们可以通过js读取html中表格结构然后动态创建div或table来完成层叠拼接工作，这样一来我们可以简单的在html中维护一份table的干净代码即可。</p>
+
+<p><small>SuperTable是比较简单的一种实现方式,网上流传较多的是案例大都是Asp.Net WebForm较老的案例，且Project文件不完整，很难运行，这里提炼出了一个纯html+css+js的轻量级Demo,供大家参考。</small></p>
+
+<p>原理与前面说的相同，这里我们不再赘述。直接上代码了。如果代码不完整，后面附有完整案例的下载链接，大家可以下载研究。</p>
+
+<p><em>完整Html代码：</em></p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="nt">&lt;html</span> <span class="na">lang=</span><span class="s">"zh-CN"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+    <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"UTF-8"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;title&gt;</span>锁定表格行列<span class="nt">&lt;/title&gt;</span>
+    <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"supertables.css"</span><span class="nt">&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+<span class="nt">&lt;table</span> <span class="na">id=</span><span class="s">"tb"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;th&gt;</span>序号<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th&gt;</span>备件<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th&gt;</span>换件日期<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th&gt;</span>寿命比例<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th&gt;</span>规格型号<span class="nt">&lt;/th&gt;</span>
+        <span class="nt">&lt;th&gt;</span>理论寿命<span class="nt">&lt;/th&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"light-bg"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td&gt;</span>1<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>电机<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.6"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>XL2D<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>6个月<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>蝶型弹簧<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.6"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>XL2D<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>6个月<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"light-bg"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td&gt;</span>3<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>电机<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.6"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>XL2D<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>6个月<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>4<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>蝶型弹簧<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.6"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>XL2D<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>6个月<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"light-bg"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td&gt;</span>5<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>电机<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.6"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>XL2D<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>6个月<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>6<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>蝶型弹簧<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.6"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>XL2D<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>6个月<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"light-bg"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td&gt;</span>7<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>电机<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.6"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>XL2D<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>6个月<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>8<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>蝶型弹簧<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.6"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>XL2D<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>6个月<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"light-bg"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td&gt;</span>9<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>电机<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.6"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>XL2D<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>6个月<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr&gt;</span>
+        <span class="nt">&lt;td&gt;</span>10<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>蝶型弹簧<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.6"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>XL2D<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>6个月<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+    <span class="nt">&lt;tr</span> <span class="na">class=</span><span class="s">"light-bg"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;td&gt;</span>11<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>电机<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>2015-08-25<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>
+            <span class="nt">&lt;progress</span> <span class="na">value=</span><span class="s">"0.6"</span><span class="nt">&gt;&lt;/progress&gt;</span>
+        <span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>XL2D<span class="nt">&lt;/td&gt;</span>
+        <span class="nt">&lt;td&gt;</span>6个月<span class="nt">&lt;/td&gt;</span>
+    <span class="nt">&lt;/tr&gt;</span>
+<span class="nt">&lt;/table&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"//cdn.bootcss.com/jquery/1.12.4/jquery.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"supertable.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="nt">&lt;script&gt;</span>
+    <span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="s1">'use strict'</span><span class="p">;</span>
+        <span class="nx">$</span><span class="p">(</span><span class="s2">"#tb"</span><span class="p">).</span><span class="nx">toSuperTable</span><span class="p">({</span><span class="na">width</span><span class="p">:</span> <span class="s2">"332px"</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="s2">"208px"</span><span class="p">,</span> <span class="na">fixedCols</span><span class="p">:</span> <span class="mi">2</span><span class="p">});</span>
+    <span class="p">})();</span>
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</code></pre></div></div>
+
+<p><em>supertables.css：</em></p>
+
+<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nc">.sBase</span> <span class="p">{</span>
+	<span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+    <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">height</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+    <span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* HEADERS */</span>
+<span class="nc">.sHeader</span> <span class="p">{</span>
+	<span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+	<span class="nl">z-index</span><span class="p">:</span> <span class="m">3</span><span class="p">;</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sHeaderInner</span> <span class="p">{</span>
+	<span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sHeaderInner</span> <span class="nt">table</span> <span class="p">{</span>
+	<span class="nl">border-spacing</span><span class="p">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">border-collapse</span><span class="p">:</span> <span class="nb">collapse</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">width</span><span class="p">:</span> <span class="m">1px</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">table-layout</span><span class="p">:</span> <span class="nb">fixed</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#ffffff</span><span class="p">;</span> <span class="c">/* Here b/c of Opera 9.25 :( */</span>
+<span class="p">}</span>
+
+<span class="c">/* HEADERS - FIXED */</span>
+<span class="nc">.sFHeader</span> <span class="p">{</span>
+	<span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+	<span class="nl">z-index</span><span class="p">:</span> <span class="m">4</span><span class="p">;</span>
+	<span class="nl">overflow</span><span class="p">:</span> <span class="nb">hidden</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sFHeader</span> <span class="nt">table</span> <span class="p">{</span>
+	<span class="nl">border-spacing</span><span class="p">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">border-collapse</span><span class="p">:</span> <span class="nb">collapse</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">width</span><span class="p">:</span> <span class="m">1px</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">table-layout</span><span class="p">:</span> <span class="nb">fixed</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#ffffff</span><span class="p">;</span> <span class="c">/* Here b/c of Opera 9.25 :( */</span>
+<span class="p">}</span>
+
+<span class="c">/* BODY */</span>
+<span class="nc">.sData</span> <span class="p">{</span>
+	<span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+	<span class="nl">z-index</span><span class="p">:</span> <span class="m">2</span><span class="p">;</span>
+	<span class="nl">overflow</span><span class="p">:</span> <span class="nb">auto</span><span class="p">;</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sData</span> <span class="nt">table</span> <span class="p">{</span>
+	<span class="nl">border-spacing</span><span class="p">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">border-collapse</span><span class="p">:</span> <span class="nb">collapse</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">width</span><span class="p">:</span> <span class="m">1px</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">table-layout</span><span class="p">:</span> <span class="nb">fixed</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* BODY - FIXED */</span>
+<span class="nc">.sFData</span> <span class="p">{</span>
+	<span class="nl">position</span><span class="p">:</span> <span class="nb">absolute</span><span class="p">;</span>
+	<span class="nl">z-index</span><span class="p">:</span> <span class="m">1</span><span class="p">;</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sFDataInner</span> <span class="p">{</span>
+	<span class="nl">position</span><span class="p">:</span> <span class="nb">relative</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sFData</span> <span class="nt">table</span> <span class="p">{</span>
+	<span class="nl">border-spacing</span><span class="p">:</span> <span class="m">0px</span> <span class="m">0px</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">border-collapse</span><span class="p">:</span> <span class="nb">collapse</span> <span class="cp">!important</span><span class="p">;</span>
+	<span class="nl">width</span><span class="p">:</span> <span class="m">1px</span> <span class="cp">!important</span><span class="p">;</span>	
+	<span class="nl">table-layout</span><span class="p">:</span> <span class="nb">fixed</span> <span class="cp">!important</span><span class="p">;</span>
+<span class="p">}</span>
+
+
+<span class="c">/*
+///////////////////////////////////////////////////////////////////////////////////////// 
+// Super Tables - Skin Classes
+// Remove if not needed
+///////////////////////////////////////////////////////////////////////////////////////// 
+*/</span>
+
+<span class="c">/* sDefault */</span>
+<span class="nc">.sDefault</span> <span class="p">{</span>
+	<span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+	<span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+	<span class="nl">font-family</span><span class="p">:</span> <span class="n">Verdana</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="n">sans</span> <span class="nb">serif</span><span class="p">;</span>
+	<span class="nl">font-size</span><span class="p">:</span> <span class="m">0.8em</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sDefault</span> <span class="nt">th</span><span class="o">,</span> <span class="nc">.sDefault</span> <span class="nt">td</span> <span class="p">{</span>
+	<span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#cccccc</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">3px</span> <span class="m">6px</span> <span class="m">3px</span> <span class="m">4px</span><span class="p">;</span>
+	<span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sDefault</span> <span class="nt">th</span> <span class="p">{</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#e5e5e5</span><span class="p">;</span>
+	<span class="nl">border-color</span><span class="p">:</span> <span class="m">#c5c5c5</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sDefault-Fixed</span> <span class="p">{</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#eeeeee</span><span class="p">;</span>
+	<span class="nl">border-color</span><span class="p">:</span> <span class="m">#c5c5c5</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* sSky */</span>
+<span class="nc">.sSky</span> <span class="p">{</span>
+	<span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+	<span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+	<span class="nl">font-family</span><span class="p">:</span> <span class="n">Verdana</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="n">sans</span> <span class="nb">serif</span><span class="p">;</span>
+	<span class="nl">font-size</span><span class="p">:</span> <span class="m">0.8em</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sSky</span> <span class="nt">th</span><span class="o">,</span> <span class="nc">.sSky</span> <span class="nt">td</span> <span class="p">{</span>
+	<span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#9eb6ce</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">3px</span> <span class="m">6px</span> <span class="m">3px</span> <span class="m">4px</span><span class="p">;</span>
+	<span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sSky</span> <span class="nt">th</span> <span class="p">{</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#CFDCEE</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sSky-Fixed</span> <span class="p">{</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#e4ecf7</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* sOrange */</span>
+<span class="nc">.sOrange</span> <span class="p">{</span>
+	<span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+	<span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+	<span class="nl">font-family</span><span class="p">:</span> <span class="n">Verdana</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="n">sans</span> <span class="nb">serif</span><span class="p">;</span>
+	<span class="nl">font-size</span><span class="p">:</span> <span class="m">0.8em</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sOrange</span> <span class="nt">th</span><span class="o">,</span> <span class="nc">.sOrange</span> <span class="nt">td</span> <span class="p">{</span>
+	<span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#cebb9e</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">3px</span> <span class="m">6px</span> <span class="m">3px</span> <span class="m">4px</span><span class="p">;</span>
+	<span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sOrange</span> <span class="nt">th</span> <span class="p">{</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#ECD8C7</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sOrange-Fixed</span> <span class="p">{</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#f7ede4</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="c">/* sDark */</span>
+<span class="nc">.sDark</span> <span class="p">{</span>
+	<span class="nl">margin</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">0px</span><span class="p">;</span>
+	<span class="nl">border</span><span class="p">:</span> <span class="nb">none</span><span class="p">;</span>
+	<span class="nl">font-family</span><span class="p">:</span> <span class="n">Verdana</span><span class="p">,</span> <span class="n">Arial</span><span class="p">,</span> <span class="n">sans</span> <span class="nb">serif</span><span class="p">;</span>
+	<span class="nl">font-size</span><span class="p">:</span> <span class="m">0.8em</span><span class="p">;</span>
+	<span class="nl">color</span><span class="p">:</span> <span class="m">#ffffff</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sDark</span> <span class="nt">th</span><span class="o">,</span> <span class="nc">.sDark</span> <span class="nt">td</span> <span class="p">{</span>
+	<span class="nl">border</span><span class="p">:</span> <span class="m">1px</span> <span class="nb">solid</span> <span class="m">#555555</span><span class="p">;</span>
+	<span class="nl">padding</span><span class="p">:</span> <span class="m">3px</span> <span class="m">6px</span> <span class="m">3px</span> <span class="m">4px</span><span class="p">;</span>
+	<span class="nl">white-space</span><span class="p">:</span> <span class="nb">nowrap</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sDark</span> <span class="nt">th</span> <span class="p">{</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#000000</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sDark-Fixed</span> <span class="p">{</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#222222</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.sDark-Main</span> <span class="p">{</span>
+	<span class="nl">background-color</span><span class="p">:</span> <span class="m">#333333</span><span class="p">;</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><em>supertable.js：</em></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">$</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">//声明superTable</span>
+    <span class="kd">var</span> <span class="nx">superTable</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">tableId</span><span class="p">,</span> <span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+        <span class="c1">/////* Initialize */</span>
+        <span class="nx">options</span> <span class="o">=</span> <span class="nx">options</span> <span class="o">||</span> <span class="p">{};</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">cssSkin</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">cssSkin</span> <span class="o">||</span> <span class="s2">""</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">headerRows</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">headerRows</span> <span class="o">||</span> <span class="s2">"1"</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">fixedCols</span> <span class="o">=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">options</span><span class="p">.</span><span class="nx">fixedCols</span> <span class="o">||</span> <span class="s2">"0"</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">colWidths</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">colWidths</span> <span class="o">||</span> <span class="p">[];</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">initFunc</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">onStart</span> <span class="o">||</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">callbackFunc</span> <span class="o">=</span> <span class="nx">options</span><span class="p">.</span><span class="nx">onFinish</span> <span class="o">||</span> <span class="kc">null</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">initFunc</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">initFunc</span><span class="p">();</span>
+
+        <span class="c1">/////* Create the framework dom */</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sBase</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"div"</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sFHeader</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sBase</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sHeader</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sBase</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderInner</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sBase</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sFData</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sBase</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sFDataInner</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sBase</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sData</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sBase</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sColGroup</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"COLGROUP"</span><span class="p">);</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="nx">tableId</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">margin</span> <span class="o">=</span> <span class="s2">"0px"</span><span class="p">;</span>
+        <span class="cm">/* Otherwise looks bad */</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">cssSkin</span> <span class="o">!==</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">className</span> <span class="o">+=</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">cssSkin</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">"COLGROUP"</span><span class="p">).</span><span class="nx">length</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">removeChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="s2">"COLGROUP"</span><span class="p">)[</span><span class="mi">0</span><span class="p">]);</span>
+            <span class="cm">/* Making our own */</span>
+        <span class="p">}</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sParent</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">parentNode</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sParentHeight</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sParent</span><span class="p">.</span><span class="nx">offsetHeight</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sParentWidth</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sParent</span><span class="p">.</span><span class="nx">offsetWidth</span><span class="p">;</span>
+
+        <span class="c1">/////* Attach the required classNames */</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sBase</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"sBase"</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sFHeader</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"sFHeader"</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sHeader</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"sHeader"</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderInner</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"sHeaderInner"</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sFData</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"sFData"</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sFDataInner</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"sFDataInner"</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sData</span><span class="p">.</span><span class="nx">className</span> <span class="o">=</span> <span class="s2">"sData"</span><span class="p">;</span>
+
+        <span class="c1">/////* Clone parts of the data table for the new header table */</span>
+        <span class="kd">var</span> <span class="nx">alpha</span><span class="p">,</span> <span class="nx">beta</span><span class="p">,</span> <span class="nx">touched</span><span class="p">,</span> <span class="nx">clean</span><span class="p">,</span> <span class="nx">cleanRow</span><span class="p">,</span> <span class="nx">i</span><span class="p">,</span> <span class="nx">j</span><span class="p">,</span> <span class="nx">k</span><span class="p">,</span> <span class="nx">m</span><span class="p">,</span> <span class="nx">n</span><span class="p">,</span> <span class="nx">p</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderTable</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">false</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">tHead</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">alpha</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">tHead</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderTable</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">alpha</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+            <span class="nx">beta</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderTable</span><span class="p">.</span><span class="nx">tHead</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">alpha</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">tBodies</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderTable</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">alpha</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">false</span><span class="p">));</span>
+            <span class="nx">beta</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderTable</span><span class="p">.</span><span class="nx">tBodies</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+        <span class="p">}</span>
+        <span class="nx">alpha</span> <span class="o">=</span> <span class="nx">alpha</span><span class="p">.</span><span class="nx">rows</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="k">this</span><span class="p">.</span><span class="nx">headerRows</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">beta</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">alpha</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">));</span>
+        <span class="p">}</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderInner</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sHeaderTable</span><span class="p">);</span>
+
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fixedCols</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderTable</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderTable</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sFHeader</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderTable</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sFDataTable</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sFDataInner</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sFDataTable</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">/////* Set up the colGroup */</span>
+        <span class="nx">alpha</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">tBodies</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">rows</span><span class="p">;</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">alpha</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">j</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nx">clean</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+            <span class="k">for</span> <span class="p">(</span><span class="nx">k</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">alpha</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">cells</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">k</span> <span class="o">&lt;</span> <span class="nx">m</span><span class="p">;</span> <span class="nx">k</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nx">alpha</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">cells</span><span class="p">[</span><span class="nx">k</span><span class="p">].</span><span class="nx">colSpan</span> <span class="o">!==</span> <span class="mi">1</span> <span class="o">||</span> <span class="nx">alpha</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">cells</span><span class="p">[</span><span class="nx">k</span><span class="p">].</span><span class="nx">rowSpan</span> <span class="o">!==</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                    <span class="nx">i</span> <span class="o">+=</span> <span class="nx">alpha</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">cells</span><span class="p">[</span><span class="nx">k</span><span class="p">].</span><span class="nx">rowSpan</span> <span class="o">-</span> <span class="mi">1</span><span class="p">;</span>
+                    <span class="nx">clean</span> <span class="o">=</span> <span class="kc">false</span><span class="p">;</span>
+                    <span class="k">break</span><span class="p">;</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">clean</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="k">break</span><span class="p">;</span>
+            <span class="cm">/* A row with no cells of colSpan &gt; 1 || rowSpan &gt; 1 has been found */</span>
+        <span class="p">}</span>
+        <span class="nx">cleanRow</span> <span class="o">=</span> <span class="p">(</span><span class="nx">clean</span> <span class="o">===</span> <span class="kc">true</span><span class="p">)</span> <span class="p">?</span> <span class="nx">i</span> <span class="p">:</span> <span class="mi">0</span><span class="p">;</span>
+        <span class="cm">/* Use this row index to calculate the column widths */</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">j</span> <span class="o">=</span> <span class="nx">alpha</span><span class="p">[</span><span class="nx">cleanRow</span><span class="p">].</span><span class="nx">cells</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">j</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">i</span> <span class="o">===</span> <span class="k">this</span><span class="p">.</span><span class="nx">colWidths</span><span class="p">.</span><span class="nx">length</span> <span class="o">||</span> <span class="k">this</span><span class="p">.</span><span class="nx">colWidths</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">===</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">colWidths</span><span class="p">[</span><span class="nx">i</span><span class="p">]</span> <span class="o">=</span> <span class="nx">alpha</span><span class="p">[</span><span class="nx">cleanRow</span><span class="p">].</span><span class="nx">cells</span><span class="p">[</span><span class="nx">i</span><span class="p">].</span><span class="nx">offsetWidth</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+        <span class="k">for</span> <span class="p">(</span><span class="nx">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="nx">j</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">colWidths</span><span class="p">.</span><span class="nx">length</span><span class="p">;</span> <span class="nx">i</span> <span class="o">&lt;</span> <span class="nx">j</span><span class="p">;</span> <span class="nx">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sColGroup</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">"COL"</span><span class="p">));</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sColGroup</span><span class="p">.</span><span class="nx">lastChild</span><span class="p">.</span><span class="nx">setAttribute</span><span class="p">(</span><span class="s2">"width"</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">colWidths</span><span class="p">[</span><span class="nx">i</span><span class="p">]);</span>
+        <span class="p">}</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sColGroup</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderTable</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sColGroup</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderTable</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fixedCols</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sFDataTable</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sColGroup</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">sFDataTable</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderTable</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sColGroup</span><span class="p">.</span><span class="nx">cloneNode</span><span class="p">(</span><span class="kc">true</span><span class="p">),</span> <span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderTable</span><span class="p">.</span><span class="nx">firstChild</span><span class="p">);</span>
+        <span class="p">}</span>
+
+        <span class="c1">/////* Style the tables individually if applicable */</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">cssSkin</span> <span class="o">!==</span> <span class="s2">""</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">className</span> <span class="o">+=</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">cssSkin</span> <span class="o">+</span> <span class="s2">"-Main"</span><span class="p">;</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderTable</span><span class="p">.</span><span class="nx">className</span> <span class="o">+=</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">cssSkin</span> <span class="o">+</span> <span class="s2">"-Headers"</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fixedCols</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">sFDataTable</span><span class="p">.</span><span class="nx">className</span> <span class="o">+=</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">cssSkin</span> <span class="o">+</span> <span class="s2">"-Fixed"</span><span class="p">;</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderTable</span><span class="p">.</span><span class="nx">className</span> <span class="o">+=</span> <span class="s2">" "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">cssSkin</span> <span class="o">+</span> <span class="s2">"-FixedHeaders"</span><span class="p">;</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+
+        <span class="c1">/////* Throw everything into sBase */</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fixedCols</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sBase</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sFHeader</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sHeader</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sHeaderInner</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sBase</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sHeader</span><span class="p">);</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fixedCols</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sFData</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sFDataInner</span><span class="p">);</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sBase</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sFData</span><span class="p">);</span>
+        <span class="p">}</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sBase</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sData</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sParent</span><span class="p">.</span><span class="nx">insertBefore</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sBase</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">);</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sData</span><span class="p">.</span><span class="nx">appendChild</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">);</span>
+
+        <span class="c1">/////* Align the tables */</span>
+        <span class="kd">var</span> <span class="nx">sDataStyles</span><span class="p">,</span> <span class="nx">sDataTableStyles</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderHeight</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">tBodies</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">rows</span><span class="p">[(</span><span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">tHead</span><span class="p">)</span> <span class="p">?</span> <span class="mi">0</span> <span class="p">:</span> <span class="k">this</span><span class="p">.</span><span class="nx">headerRows</span><span class="p">].</span><span class="nx">offsetTop</span><span class="p">;</span>
+        <span class="nx">sDataTableStyles</span> <span class="o">=</span> <span class="s2">"margin-top: "</span> <span class="o">+</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sHeaderHeight</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"px;"</span><span class="p">;</span>
+        <span class="nx">sDataStyles</span> <span class="o">=</span> <span class="s2">"margin-top: "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderHeight</span> <span class="o">+</span> <span class="s2">"px;"</span><span class="p">;</span>
+        <span class="nx">sDataStyles</span> <span class="o">+=</span> <span class="s2">"height: "</span> <span class="o">+</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sParentHeight</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">sHeaderHeight</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"px;"</span><span class="p">;</span>
+        <span class="k">if</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">fixedCols</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+            <span class="cm">/* A collapsed table's cell's offsetLeft is calculated differently (w/ or w/out border included) across broswers - adjust: */</span>
+            <span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderWidth</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">tBodies</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">rows</span><span class="p">[</span><span class="nx">cleanRow</span><span class="p">].</span><span class="nx">cells</span><span class="p">[</span><span class="k">this</span><span class="p">.</span><span class="nx">fixedCols</span><span class="p">].</span><span class="nx">offsetLeft</span><span class="p">;</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">alpha</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">defaultView</span><span class="p">;</span>
+                <span class="nx">beta</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">tBodies</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+                <span class="k">if</span> <span class="p">(</span><span class="nb">navigator</span><span class="p">.</span><span class="nx">taintEnabled</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* If not Safari */</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderWidth</span> <span class="o">+=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">alpha</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">beta</span><span class="p">,</span> <span class="kc">null</span><span class="p">).</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="s2">"border-right-width"</span><span class="p">))</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+                <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderWidth</span> <span class="o">+=</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">alpha</span><span class="p">.</span><span class="nx">getComputedStyle</span><span class="p">(</span><span class="nx">beta</span><span class="p">,</span> <span class="kc">null</span><span class="p">).</span><span class="nx">getPropertyValue</span><span class="p">(</span><span class="s2">"border-right-width"</span><span class="p">));</span>
+                <span class="p">}</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="cm">/*@cc_on!@*/</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* Internet Explorer */</span>
+                <span class="nx">alpha</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">tBodies</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">rows</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">cells</span><span class="p">[</span><span class="mi">0</span><span class="p">];</span>
+                <span class="nx">beta</span> <span class="o">=</span> <span class="p">[</span><span class="nx">alpha</span><span class="p">.</span><span class="nx">currentStyle</span><span class="p">[</span><span class="s2">"borderRightWidth"</span><span class="p">],</span> <span class="nx">alpha</span><span class="p">.</span><span class="nx">currentStyle</span><span class="p">[</span><span class="s2">"borderLeftWidth"</span><span class="p">]];</span>
+                <span class="k">if</span> <span class="p">(</span><span class="sr">/px/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">beta</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="sr">/px/i</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">beta</span><span class="p">[</span><span class="mi">1</span><span class="p">]))</span> <span class="p">{</span>
+                    <span class="nx">beta</span> <span class="o">=</span> <span class="p">[</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">beta</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="nb">parseInt</span><span class="p">(</span><span class="nx">beta</span><span class="p">[</span><span class="mi">1</span><span class="p">])].</span><span class="nx">sort</span><span class="p">();</span>
+                    <span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderWidth</span> <span class="o">+=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">ceil</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">(</span><span class="nx">beta</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="o">/</span> <span class="mi">2</span><span class="p">);</span>
+                <span class="p">}</span>
+            <span class="p">}</span>
+
+            <span class="cm">/* Opera 9.5 issue - a sizeable data table may cause the document scrollbars to appear without this: */</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">opera</span><span class="p">)</span> <span class="p">{</span>
+                <span class="k">this</span><span class="p">.</span><span class="nx">sFData</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sParentHeight</span> <span class="o">+</span> <span class="s2">"px"</span><span class="p">;</span>
+            <span class="p">}</span>
+
+            <span class="k">this</span><span class="p">.</span><span class="nx">sFHeader</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">width</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderWidth</span> <span class="o">+</span> <span class="s2">"px"</span><span class="p">;</span>
+            <span class="nx">sDataTableStyles</span> <span class="o">+=</span> <span class="s2">"margin-left: "</span> <span class="o">+</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderWidth</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"px;"</span><span class="p">;</span>
+            <span class="nx">sDataStyles</span> <span class="o">+=</span> <span class="s2">"margin-left: "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderWidth</span> <span class="o">+</span> <span class="s2">"px;"</span><span class="p">;</span>
+            <span class="nx">sDataStyles</span> <span class="o">+=</span> <span class="s2">"width: "</span> <span class="o">+</span> <span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">sParentWidth</span> <span class="o">-</span> <span class="k">this</span><span class="p">.</span><span class="nx">sFHeaderWidth</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"px;"</span><span class="p">;</span>
+        <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+            <span class="nx">sDataStyles</span> <span class="o">+=</span> <span class="s2">"width: "</span> <span class="o">+</span> <span class="k">this</span><span class="p">.</span><span class="nx">sParentWidth</span> <span class="o">+</span> <span class="s2">"px;"</span><span class="p">;</span>
+        <span class="p">}</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sData</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">cssText</span> <span class="o">=</span> <span class="nx">sDataStyles</span><span class="p">;</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">sDataTable</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">cssText</span> <span class="o">=</span> <span class="nx">sDataTableStyles</span><span class="p">;</span>
+
+        <span class="c1">/////* Set up table scrolling and IE's onunload event for garbage collection */</span>
+        <span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">st</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="p">(</span><span class="nx">st</span><span class="p">.</span><span class="nx">fixedCols</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
+                <span class="nx">st</span><span class="p">.</span><span class="nx">sData</span><span class="p">.</span><span class="nx">onscroll</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">st</span><span class="p">.</span><span class="nx">sHeaderInner</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">right</span> <span class="o">=</span> <span class="nx">st</span><span class="p">.</span><span class="nx">sData</span><span class="p">.</span><span class="nx">scrollLeft</span> <span class="o">+</span> <span class="s2">"px"</span><span class="p">;</span>
+                    <span class="nx">st</span><span class="p">.</span><span class="nx">sFDataInner</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">top</span> <span class="o">=</span> <span class="p">(</span><span class="nx">st</span><span class="p">.</span><span class="nx">sData</span><span class="p">.</span><span class="nx">scrollTop</span> <span class="o">*</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="s2">"px"</span><span class="p">;</span>
+                <span class="p">};</span>
+            <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+                <span class="nx">st</span><span class="p">.</span><span class="nx">sData</span><span class="p">.</span><span class="nx">onscroll</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">st</span><span class="p">.</span><span class="nx">sHeaderInner</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">right</span> <span class="o">=</span> <span class="nx">st</span><span class="p">.</span><span class="nx">sData</span><span class="p">.</span><span class="nx">scrollLeft</span> <span class="o">+</span> <span class="s2">"px"</span><span class="p">;</span>
+                <span class="p">};</span>
+            <span class="p">}</span>
+            <span class="k">if</span> <span class="p">(</span><span class="cm">/*@cc_on!@*/</span><span class="mi">0</span><span class="p">)</span> <span class="p">{</span> <span class="cm">/* Internet Explorer */</span>
+                <span class="nb">window</span><span class="p">.</span><span class="nx">attachEvent</span><span class="p">(</span><span class="s2">"onunload"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                    <span class="nx">st</span><span class="p">.</span><span class="nx">sData</span><span class="p">.</span><span class="nx">onscroll</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                    <span class="nx">st</span> <span class="o">=</span> <span class="kc">null</span><span class="p">;</span>
+                <span class="p">});</span>
+            <span class="p">}</span>
+        <span class="p">})(</span><span class="k">this</span><span class="p">);</span>
+
+        <span class="k">this</span><span class="p">.</span><span class="nx">callbackFunc</span> <span class="o">&amp;&amp;</span> <span class="k">this</span><span class="p">.</span><span class="nx">callbackFunc</span><span class="p">();</span>
+    <span class="p">};</span>
+
+    <span class="c1">//附加到JQuery中</span>
+    <span class="nx">$</span><span class="p">.</span><span class="nx">fn</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span>
+        <span class="p">{</span>
+            <span class="na">toSuperTable</span><span class="p">:</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">options</span><span class="p">)</span> <span class="p">{</span>
+
+                <span class="c1">//SuperTable默认配置</span>
+                <span class="kd">var</span> <span class="nx">setting</span> <span class="o">=</span> <span class="nx">$</span><span class="p">.</span><span class="nx">extend</span><span class="p">(</span>
+                    <span class="p">{</span>
+                        <span class="na">headerRows</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="c1">//锁定行</span>
+                        <span class="na">fixedCols</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span><span class="c1">//锁定列</span>
+                        <span class="na">width</span><span class="p">:</span> <span class="s2">"100%"</span><span class="p">,</span> <span class="na">height</span><span class="p">:</span> <span class="s2">"100%"</span><span class="p">,</span> <span class="na">padding</span><span class="p">:</span> <span class="s2">"0px"</span><span class="p">,</span>
+                        <span class="na">overflow</span><span class="p">:</span> <span class="s2">"hidden"</span><span class="p">,</span> <span class="na">colWidths</span><span class="p">:</span> <span class="kc">undefined</span><span class="p">,</span>
+                        <span class="na">onStart</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                        <span class="p">},</span>
+                        <span class="na">onFinish</span><span class="p">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                        <span class="p">},</span>
+                        <span class="na">cssSkin</span><span class="p">:</span> <span class="s2">"sOrange"</span><span class="c1">//皮肤选择，在supertables.css底部定义</span>
+                    <span class="p">},</span> <span class="nx">options</span><span class="p">);</span>
+                <span class="k">return</span> <span class="k">this</span><span class="p">.</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+                    <span class="kd">var</span> <span class="nx">q</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+                    <span class="kd">var</span> <span class="nx">id</span> <span class="o">=</span> <span class="nx">q</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">"id"</span><span class="p">);</span>
+                    <span class="nx">q</span><span class="p">.</span><span class="nx">removeAttr</span><span class="p">(</span><span class="s2">"style"</span><span class="p">).</span><span class="nx">wrap</span><span class="p">(</span><span class="s2">"&lt;div id='"</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s2">"_box'&gt;&lt;/div&gt;"</span><span class="p">);</span>
+                    <span class="kd">var</span> <span class="nx">nonCssProps</span> <span class="o">=</span> <span class="p">[</span><span class="s2">"fixedCols"</span><span class="p">,</span> <span class="s2">"headerRows"</span><span class="p">,</span> <span class="s2">"onStart"</span><span class="p">,</span> <span class="s2">"onFinish"</span><span class="p">,</span> <span class="s2">"cssSkin"</span><span class="p">,</span> <span class="s2">"colWidths"</span><span class="p">];</span>
+                    <span class="kd">var</span> <span class="nx">container</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="s2">"#"</span> <span class="o">+</span> <span class="nx">id</span> <span class="o">+</span> <span class="s2">"_box"</span><span class="p">);</span>
+                    <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">p</span> <span class="k">in</span> <span class="nx">setting</span><span class="p">)</span> <span class="p">{</span>
+                        <span class="k">if</span> <span class="p">(</span><span class="nx">$</span><span class="p">.</span><span class="nx">inArray</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">nonCssProps</span><span class="p">)</span> <span class="o">==</span> <span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
+                            <span class="nx">container</span><span class="p">.</span><span class="nx">css</span><span class="p">(</span><span class="nx">p</span><span class="p">,</span> <span class="nx">setting</span><span class="p">[</span><span class="nx">p</span><span class="p">]);</span>
+                            <span class="k">delete</span> <span class="nx">setting</span><span class="p">[</span><span class="nx">p</span><span class="p">];</span>
+                        <span class="p">}</span>
+                    <span class="p">}</span>
+                    <span class="kd">var</span> <span class="nx">mySt</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">superTable</span><span class="p">(</span><span class="nx">id</span><span class="p">,</span> <span class="nx">setting</span><span class="p">);</span>
+                <span class="p">});</span>
+            <span class="p">}</span>
+        <span class="p">});</span>
+<span class="p">})(</span><span class="nx">jQuery</span><span class="p">);</span>
+</code></pre></div></div>
+
+<p><em>效果图：</em></p>
+<iframe src="/res/fixtable/supertable.html" style="border:0;width:100%;height:225px;"></iframe>
+
+<p><em>完整代码下载：</em>
+<a href="/res/fixtable/SuperTable.zip">SuperTable轻量级完整案例下载</a></p>
+
+			</div>
+
+			
+						<div id="page-meta" class="t30">
+				<p>
+					<!-- Look the author details up from the site config. -->
+					
+					<!-- Output author details if some exist. -->
+					
+
+				
+				<time class="icon-calendar pr20" datetime="2016-12-11T00:00:00+08:00" itemprop="datePublished"> 2016-12-11</time>
+				
+
+				<span class="icon-archive pr20"> IT</span>
+				<br />
+				<span class="pr20"><span class="icon-price-tag pr10"> Work Skill</span> <span class="icon-price-tag pr10"> Development</span> </span>
+			</p>
+
+			
+			<div id="post-nav" class="row">
+				
+				<div class="small-5 columns"><a class="button small radius prev" href="https://colinchang.net/essay/2youth/">&laquo; 诀别诗</a></div><!-- /.small-4.columns -->
+				
+				<div class="small-2 columns text-center"><a class="radius button small" href="https://colinchang.net/blog/archive/" title="Blog Archive">Archive</a></div><!-- /.small-4.columns -->
+				
+				<div class="small-5 columns text-right"><a class="button small radius next" href="https://colinchang.net/it/markdown/">Markdown 快速入门 &raquo;</a></div><!-- /.small-4.columns -->
+				
+			</div>
+			
+			</div><!--  /.page-meta -->
+
+			
+
+			
+						
+				<h3 id="comments" class="t60">Dialogue &amp; Discussion</h3>
+			    <div id="disqus_thread"></div>
+			    <script type="text/javascript">
+			        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+			        var disqus_shortname = 'http-colin-chang-site'; 
+			        var disqus_identifier = '/it/fixtable/';
+
+			        /* * * DON'T EDIT BELOW THIS LINE * * */
+			        (function() {
+			            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+			        })();
+			    </script>
+			    <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+			
+
+
+
+			
+		</article>
+	</div><!-- /.medium-8.columns -->
+
+
+	
+
+
+	
+</div><!-- /.row -->
+
+
+	
+	    <div id="up-to-top" class="row">
+      <div class="small-12 columns" style="text-align: right;">
+        <a class="iconfont" href="#top-of-page">&#xf108;</a>
+      </div><!-- /.small-12.columns -->
+    </div><!-- /.row -->
+
+
+    <footer id="footer-content" class="bg-grau">
+      <div id="footer">
+        <div class="row">
+          <div class="medium-6 large-5 columns">
+            <h5 class="shadow-black">About</h5>
+
+            <p class="shadow-black">
+              Here is Colin's Blog.It includes some blogs and articles.'Book' module also includes some learning notes.Let's explore this big world together.
+            </p>
+          </div><!-- /.large-6.columns -->
+
+
+          <div class="small-6 medium-3 large-3 large-offset-1 columns">
+            
+              
+                <h5 class="shadow-black">Services</h5>
+              
+            
+              
+            
+              
+            
+              
+            
+
+              <ul class="no-bullet shadow-black">
+              
+                
+                  <li >
+                    <a href="https://colinchang.net"  title=""></a>
+                  </li>
+              
+                
+                  <li >
+                    <a href="https://github.com/Phlow/feeling-responsive/" target="_blank"  title="Feeling Responsive">About Theme</a>
+                  </li>
+              
+                
+                  <li >
+                    <a href="https://phlow.github.io/feeling-responsive/documentation/" target="_blank"  title="documentation of this theme">Documentation</a>
+                  </li>
+              
+                
+                  <li >
+                    <a href="https://colinchang.net/sitemap.xml"  title="Sitemap for Google Webmaster Tools">Sitemap</a>
+                  </li>
+              
+              </ul>
+          </div><!-- /.large-4.columns -->
+
+
+          <div class="small-6 medium-3 large-3 columns">
+            
+              
+                <h5 class="shadow-black">Thanks</h5>
+              
+            
+              
+            
+              
+            
+              
+            
+              
+            
+
+            <ul class="no-bullet shadow-black">
+            
+              
+                <li >
+                  <a href="https://colinchang.net"  title=""></a>
+                </li>
+            
+              
+                <li class="network-entypo" >
+                  <a href="http://entypo.com/" target="_blank"  title="Icons by Daniel Bruce">Icons by Daniel Bruce</a>
+                </li>
+            
+              
+                <li class="services-newsletter" >
+                  <a href="http://foundation.zurb.com/" target="_blank"  title="Built on Foundation">Built on Foundation</a>
+                </li>
+            
+              
+                <li class="rss-link" >
+                  <a href="http://unsplash.com/" target="_blank"  title="Images by Unsplash">Images by Unsplash</a>
+                </li>
+            
+              
+                <li class="sitemap-link" >
+                  <a href="http://srobbin.com/jquery-plugins/backstretch/" target="_blank"  title="Using Backstretch by Scott Robbin">Using Backstretch by Scott Robbin</a>
+                </li>
+            
+            </ul>
+          </div><!-- /.large-3.columns -->
+        </div><!-- /.row -->
+
+      </div><!-- /#footer -->
+
+
+      <div id="subfooter">
+        <nav class="row">
+          <section id="subfooter-left" class="small-12 medium-6 columns credits">
+            <p>Copyright © Colin Blog 2018</p>
+          </section>
+
+          <section id="subfooter-right" class="small-12 medium-6 columns">
+            <ul class="inline-list social-icons">
+            
+              <li><a href="http://github.com/colin-chang" target="_blank" class="icon-github" title=""></a></li>
+            
+              <li><a href="mailto:zhangcheng5468@gmail.com" target="_blank" class="icon-mail" title=""></a></li>
+            
+              <li><a href="https://t.me/Colin_Chang" target="_blank" class="icon-paper-plane" title=""></a></li>
+            
+              <li><a href="https://twitter.com/zhangcheng5468" target="_blank" class="icon-twitter" title=""></a></li>
+            
+              <li><a href="https://www.facebook.com/colinchang.zc" target="_blank" class="icon-facebook" title=""></a></li>
+            
+              <li><a href="https://www.instagram.com/colin__chang/" target="_blank" class="icon-instagram" title=""></a></li>
+            
+              <li><a href="https://www.youtube.com/channel/UCMhN4CHJMuSOYe9CMXIoV7Q" target="_blank" class="icon-youtube" title=""></a></li>
+            
+            </ul>
+          </section>
+        </nav>
+      </div><!-- /#subfooter -->
+    </footer>
+
+	
+
+	
+
+
+<script src="https://colinchang.net/assets/js/javascript.min.js"></script>
+
+
+
+<script>
+    $("#masthead").backstretch("/images/fixtable-title.jpg", {fade: 700});
+    $("#masthead-with-text").backstretch("/images/fixtable-title.jpg", {fade: 700});
+</script>
+
+
+
+
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-131744342-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-131744342-1');
+</script>
+
+
+
+
+
+
+
+
+</body>
+</html>
+
