@@ -6,23 +6,23 @@
 #
 layout: frontpage
 header:
-  image_fullwidth: home-title.jpg
+  image_fullwidth: 21/1kpSVx.jpg
 widget1:
   title: "Blogs"
   url: '/blog/'
-  image: home-blog.jpg
+  image: 21/1F7mVJ.jpg
   text: 'Blogs about daily life such as some random thoughts and activities.We also share some good ideas and solutions here.'
 widget2:
   title: "Books"
   url: '/book/'
-  image: home-book.jpg
+  image: 21/1F7na9.jpg
   text: 'Here are some personal books wrote when I learn something new.most of them are about IT and other useful skills.'
 
 widget3:
   title: "Theme"
   url: 'https://github.com/Phlow/feeling-responsive/'
   text: '1. Optimized for speed and it&#39;s responsive.<br/>2. Built on <a href="http://foundation.zurb.com/">Foundation Framework</a>.<br/>3. Customizable navigation, footer,...'
-  video: '<a href="#" data-reveal-id="videoModal"><img src="/images/home-doc.jpg" width="302" height="182" alt=""/></a>'
+  video: '<a href="#" data-reveal-id="videoModal"><img src="https://s2.ax1x.com/2020/01/21/1F7u5R.jpg" width="302" height="182" alt=""/></a>'
 
 #
 # Use the call for action to show a button on the frontpage

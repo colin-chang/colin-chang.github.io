@@ -6,7 +6,7 @@ title: "讲不出再见"
 subheadline: "大浪淘沙，经典不朽"
 teaser: "这首《讲不出再见》或许是传唱最广的粤语歌之一了，作为谭咏麟1994年专辑《梦幻的笑容》中的招牌曲目，它几乎已经成为了谭氏情歌的代表作。在香港各大高校的毕业典礼上，这首歌都被当作毕业歌曲演唱。它在中国大陆和海外华人区亦颇具知名度，堪称一曲象征着九十年代华丽与浪漫的骊歌。"
 image:
-    thumb: cannotsaygoodbye-thumb.jpg
+    thumb: 21/1FTTUA.jpg
 tags:
     - Cantonese Song
 categories:

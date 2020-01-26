@@ -5,7 +5,7 @@ title: "Youth Memory of Danielle"
 subheadline: "a song from a young girl"
 teaser: "This is a short video from Danielle.It can just remind us that how wonderful it was when we were young.Nobody can hold the youth,but what we got from  time should be sweet memories."
 image:
-    thumb: musicofdanielle-thumb.jpg
+    thumb: 21/1kplRg.jpg
 tags:
     - Cantonese Song
 categories:

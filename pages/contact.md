@@ -4,7 +4,7 @@ title: "About Me"
 header:
     title: I can because I think I can
     background-color: "#EFC94C;"
-    image_fullwidth: about-title.jpg
+    image_fullwidth: 21/1Ffk01.jpg
 
 mediaplayer: true
 permalink: "/contact/"
@@ -26,10 +26,10 @@ permalink: "/contact/"
 
 <div class="row">
     <div class="medium-6 columns t30">
-        <img src="{{ site.urlimg }}about-fragment-1.jpg">
+        <img src="{{ site.urlimg }}21/1FfZtK.jpg">
     </div>
     <div class="medium-6 columns t30">
-        <img src="{{ site.urlimg }}about-fragment-2.jpg">
+        <img src="{{ site.urlimg }}21/1FfATx.jpg">
     </div>
 </div>
 

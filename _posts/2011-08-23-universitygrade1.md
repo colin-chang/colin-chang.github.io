@@ -7,18 +7,18 @@ tags:
     - Emotion
 header:
    title: '象牙塔生活'
-   image_fullwidth: universitygrade1-title.jpg
+   image_fullwidth: 22/1k77He.jpg
 image:
-   thumb: universitygrade1-thumb.jpg
+   thumb: 22/1k7TBD.jpg
 gallery:
-    - image_url: universitygrade1-g1.jpg
-    - image_url: universitygrade1-g2.jpg
-    - image_url: universitygrade1-g3.jpg
-    - image_url: universitygrade1-g4.jpg
-    - image_url: universitygrade1-g5.jpg
-    - image_url: universitygrade1-g6.jpg
-    - image_url: universitygrade1-g7.jpg
-    - image_url: universitygrade1-g8.jpg
+    - image_url: 26/1mIWut.png
+    - image_url: 22/1k7wpq.jpg
+    - image_url: 22/1k7onO.jpg
+    - image_url: 22/1k7snU.jpg
+    - image_url: 22/1k7674.jpg
+    - image_url: 26/1m7lHP.png
+    - image_url: 22/1k7f91.jpg
+    - image_url: 22/1k74c6.jpg
 title:  "大一生活总结"
 subheadline:  "一入大学似海深，从此学习是路人"
 teaser: "<p>弹指间，大一已经飘过。尽管我总是潜意识里去宽慰自己说才刚大一，来日方长。但是，当校园迎来了下一届新生，不自觉的感觉自己不再是菜鸟了，至少不是最菜的了！</p>"

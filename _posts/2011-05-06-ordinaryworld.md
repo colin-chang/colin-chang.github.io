@@ -7,9 +7,9 @@ tags:
     - Emotion
 header:
    title: '注定不凡'
-   image_fullwidth: ordinaryworld-title.jpg
+   image_fullwidth: 21/1kpGss.jpg
 image:
-   thumb: ordinaryworld-thumb.jpg
+   thumb: 21/1kpNd0.jpg
 title:  "不平凡的生活"
 subheadline:  "平凡的世界"
 teaser: "<p>“寄蜉蝣于天地，渺沧海之一粟”。我们每个人对于这个纷繁的世界而言，都是平凡的。</p>

@@ -10,7 +10,7 @@ categories:
 tags:
     - Linux
 image:
-    thumb: rpmdberror-thumb.jpg
+    thumb: 21/1kptZq.jpg
 ---
 
 ```sh
