@@ -1,13 +1,13 @@
 - menu_name: "Services"
 
-- name: "About Theme"
+- name: "Main Site (new)"
+  url: "https://ccstudio.org"
+  title: "current site moved to https://ccstudio.org"
+
+- name: "Theme"
   url: "https://github.com/Phlow/feeling-responsive/"
   title: "Feeling Responsive"
 
 - name: "Documentation"
   url: "https://phlow.github.io/feeling-responsive/documentation/"
   title: "documentation of this theme"
-
-- name: "Sitemap"
-  url: "/sitemap.xml"
-  title: "Sitemap for Google Webmaster Tools"

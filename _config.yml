@@ -14,7 +14,7 @@ title: "Colin's Blog"
 slogan: 'Keep hungry'
 
 # The description is used on homepage and in the footer to quickly describe your website. Use a maximum of 150 characters for SEO-purposes.
-description: "Here is Colin's Blog.It includes some blogs and articles.'Book' module also includes some learning notes.Let's explore this big world together."
+description: "We've moved to everything to new address <a href='https://ccstudio.org'>https://ccstudio.org</a> , please visit our new address."
 
 # The credits show up in the includes/_footer.html
 credits: '<p>Copyright © Colin Blog 2018</p>'
