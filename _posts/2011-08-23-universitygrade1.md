@@ -7,18 +7,18 @@ tags:
     - Emotion
 header:
    title: '象牙塔生活'
-   image_fullwidth: 22/1k77He.jpg
+   image_fullwidth: 27/vz5NlIMjnW1tgQU.jpg
 image:
-   thumb: 22/1k7TBD.jpg
+   thumb: 27/kmv1G7POWXQcsnb.jpg
 gallery:
-    - image_url: 26/1mIWut.png
-    - image_url: 22/1k7wpq.jpg
-    - image_url: 22/1k7onO.jpg
-    - image_url: 22/1k7snU.jpg
-    - image_url: 22/1k7674.jpg
-    - image_url: 26/1m7lHP.png
-    - image_url: 22/1k7f91.jpg
-    - image_url: 22/1k74c6.jpg
+    - image_url: 27/fnceYwVktUS9OI7.png
+    - image_url: 27/iGhJZo2EmuRct6S.jpg
+    - image_url: 27/JnhDVbzuYsikm8v.jpg
+    - image_url: 27/rDoa83HXGLi2TRE.jpg
+    - image_url: 27/XOBeZmIMVdCJRAF.jpg
+    - image_url: 27/qb7LA5wIQYoNiB4.png
+    - image_url: 27/tzH3JZiABOw7Q6j.jpg
+    - image_url: 27/shuKUcpFJBqWfbA.jpg
 title:  "大一生活总结"
 subheadline:  "一入大学似海深，从此学习是路人"
 teaser: "<p>弹指间，大一已经飘过。尽管我总是潜意识里去宽慰自己说才刚大一，来日方长。但是，当校园迎来了下一届新生，不自觉的感觉自己不再是菜鸟了，至少不是最菜的了！</p>"

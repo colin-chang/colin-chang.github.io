@@ -7,9 +7,9 @@ tags:
     - Emotion
 header:
    title: '别离的笙箫'
-   image_fullwidth: 21/1FTq8P.jpg
+   image_fullwidth: 27/v9rshMA3qXdjeCK.jpg
 image:
-   thumb: 21/1FTbCt.jpg
+   thumb: 27/5xU62IwAfKZyEQL.jpg
 title:  "送别母亲去北京"
 subheadline:  "千山万水割不断的是亲情"
 teaser: "<p>我一直认为自己是一个个性很独立的人，可是母亲的离开让我重新认识了这个问题­。</p><p>昨天我请假出去送母亲，并不觉得有什么异样的感觉，直到母亲上了火车，望着渐行渐远的火车，心中隐隐泛起了一丝无助与落寞。­</p>"

@@ -7,9 +7,9 @@ tags:
     - Emotion
 header:
    title: '半程回顾'
-   image_fullwidth: 21/1kpmZt.jpg
+   image_fullwidth: 27/aPMA2FeOdIfB9Vv.jpg
 image:
-   thumb: 21/1kpZqI.jpg
+   thumb: 27/2ZUbSiKoxgu5Q4I.jpg
 title:  "高中半程体悟"
 subheadline:  "宁欺白须公，莫欺少年穷"
 teaser: "<p>这次大修回家我多呆了一天，回来时已经是周二了。本来认为没什么大不了的，不就旷一天课吗，后来几天的学习让我认识到我错了，彻底的错了。高中的学习已经不同于初中了，这不仅仅是一个数量的上的过度，而且更是一个质的飞跃。</p>"
@@ -29,7 +29,7 @@ teaser: "<p>这次大修回家我多呆了一天，回来时已经是周二了�
 
 最后，我依然决定要用自己的勤奋去弥补这一切。相信“天道酬勤”。
 
-![宿舍合照]({{site.urlimg}}21/1kpVsA.jpg)
+![宿舍合照]({{site.urlimg}}26/girtXlZwmEcKMIO.jpg)
 
 一年过去了，我的学习稍有起色。虽说与初中时的辉煌没法比，但比刚入小时进步了许多。成绩一直都稳定在班里的前五，但我知道我丢失一样最重要的东西——自信。
 

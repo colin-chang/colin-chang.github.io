@@ -10,7 +10,7 @@ categories:
 tags:
     - Linux
 image:
-    thumb: 21/1kptZq.jpg
+    thumb: 27/SvyGnNM3Qmplije.jpg
 ---
 
 ```sh

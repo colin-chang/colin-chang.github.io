@@ -10,7 +10,7 @@ categories:
 tags:
     - Linux
 image:
-    thumb: 21/1kp1zQ.jpg
+    thumb: 27/XiOZwbCG94ePjLy.jpg
 ---
 
 ### 1. 开启网络连接
@@ -24,7 +24,7 @@ $ cd /etc/sysconfig/network-scripts/
 
 找到配置文件后修改`ONBOOT`为`Yes`,意为随系统启动网卡。
 
-![开启网络连接]({{site.urlimg}}21/1kpJLn.jpg)
+![开启网络连接]({{site.urlimg}}25/JUprbOfg1lC78QM.jpg)
 
 完成以上修改后重启网络。
 ```sh

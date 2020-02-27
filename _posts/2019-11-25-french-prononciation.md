@@ -7,10 +7,10 @@ tags:
     - Language Learning
 header:
    title:  "简明法语发音"
-   image_fullwidth: 21/1F795n.jpg
+   image_fullwidth: 27/m3ykHT2hPvsurpB.jpg
 image:
-    thumb:  21/1F7pUs.jpg
-    homepage: 21/1FTxbQ.jpg
+    thumb:  27/XtgmedCsSoURWiV.jpg
+    homepage: 27/pvbwQ9NXIHP4JC3.jpg
 title: "简明法语发音"
 subheadline:  "法语零基础入门音标语音"
 teaser: "法语是继西班牙语之后，使用者人数最多的罗曼语言独立语言之一。现时全世界有8700万人把它作为母语，以及其他2.85亿人使用它（包括把它作为第二语言的人）。法语是很多地区或组织的官方语言（例如联合国、欧洲联盟）。法语属于罗曼语族下，与英语不同源，但英法之间存在相互借鉴词汇。"
@@ -20,7 +20,7 @@ teaser: "法语是继西班牙语之后，使用者人数最多的罗曼语言�
 
 音素是法语中最小的语音单位
 
-![法语音素表]({{site.urlimg}}21/1F7SEj.jpg)
+![法语音素表]({{site.urlimg}}27/r8aR24dEHiMzIFl.jpg)
 
 法语有35个音素，其中元音15个，辅音17个，半元音3个。 法语有6个元音字母`a e i o u y` 
 
